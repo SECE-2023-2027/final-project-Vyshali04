@@ -1,0 +1,192 @@
+.header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1e293b;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.logo span {
+  font-size: 1.5rem;
+}
+
+.logo:hover {
+  color: #2563eb;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navLink {
+  font-weight: 500;
+  color: #64748b;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.navLink:hover {
+  color: #2563eb;
+  background-color: #f1f5f9;
+}
+
+.navLink.active {
+  color: #2563eb;
+  background-color: #eff6ff;
+}
+
+.signupLink {
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: white;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1.5rem;
+}
+
+.signupLink:hover {
+  background: linear-gradient(135deg, #1d4ed8, #6d28d9);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.userMenu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.userName {
+  color: #64748b;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+.logoutButton {
+  background: #f8fafc;
+  color: #64748b;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+}
+
+.logoutButton:hover {
+  background: #f1f5f9;
+  color: #475569;
+  border-color: #cbd5e1;
+}
+
+.menuButton {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.menuButton span {
+  width: 2rem;
+  height: 0.25rem;
+  background: #64748b;
+  border-radius: 10px;
+  transition: all 0.3s linear;
+  position: relative;
+  transform-origin: 1px;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+  .nav {
+    position: fixed;
+    top: 4rem;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 4rem);
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 2rem;
+    gap: 1rem;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .navOpen {
+    transform: translateX(0);
+  }
+
+  .navLink {
+    font-size: 1.125rem;
+    padding: 1rem 2rem;
+    width: 200px;
+    text-align: center;
+  }
+  
+  .userMenu {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .userName {
+    font-size: 1rem;
+  }
+  
+  .logoutButton {
+    width: 200px;
+    text-align: center;
+    padding: 1rem 2rem;
+  }
+
+  .menuButton {
+    display: flex;
+  }
+
+  .navOpen ~ .menuButton span:first-child {
+    transform: rotate(45deg);
+  }
+
+  .navOpen ~ .menuButton span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navOpen ~ .menuButton span:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+}
